@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temp Mail Bot: Ignite the Solar Grid</title>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0a0a23, #2a1a5e, #4b0082);
+      color: #ffffff;
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* Particle Background */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .particle {
+      position: absolute;
+      background: #00ffcc;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: float 15s infinite linear;
+    }
+
+    .particle:nth-child(1) { width: 2px; height: 2px; top: 10%; left: 20%; animation-duration: 20s; }
+    .particle:nth-child(2) { width: 3px; height: 3px; top: 30%; left: 50%; animation-duration: 18s; }
+    .particle:nth-child(3) { width: 1px; height: 1px; top: 50%; left: 70%; animation-duration: 22s; }
+    .particle:nth-child(4) { width: 2px; height: 2px; top: 70%; left: 30%; animation-duration: 16s; }
+    .particle:nth-child(5) { width: 3px; height: 3px; top: 20%; left: 80%; animation-duration: 19s; }
+    .particle:nth-child(6) { width: 1px; height: 1px; top: 40%; left: 10%; animation-duration: 21s; }
+    .particle:nth-child(7) { width: 2px; height: 2px; top: 60%; left: 60%; animation-duration: 17s; }
+    .particle:nth-child(8) { width: 3px; height: 3px; top: 80%; left: 40%; animation-duration: 20s; }
+
+    @keyframes float {
+      0% { transform: translateY(0) translateX(0); opacity: 0.6; }
+      50% { opacity: 0.3; }
+      100% { transform: translateY(-100vh) translateX(10px); opacity: 0.6; }
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1.typing {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      text-align: center;
+      margin: 50px 0;
+      color: #00ffcc;
+      text-shadow: 0 0 10px #00ffcc;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid #00ffcc;
+      letter-spacing: 2px;
+      animation: typing 4s steps(30, end) infinite, blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      0% { width: 0; }
+      50% { width: 100%; }
+      100% { width: 0; }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: #00ffcc; }
+    }
+
+    .section {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #00ffcc;
+      margin-bottom: 15px;
+      text-shadow: 0 0 5px #00ffcc;
+      letter-spacing: 1px;
+    }
+
+    p, li {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: #e0e0e0;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 20px;
+    }
+
+    ul li {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    ul li:before {
+      content: '🌟';
+      position: absolute;
+      left: -20px;
+      color: #00ffcc;
+    }
+
+    a {
+      font-family: 'Poppins', sans-serif;
+      color: #00ffcc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: #ff007a;
+      text-shadow: 0 0 5px #ff007a;
+    }
+
+    .cta-button {
+      font-family: 'Exo 2', sans-serif;
+      display: inline-block;
+      background: linear-gradient(45deg, #00ffcc, #ff007a);
+      padding: 12px 24px;
+      border-radius: 5px;
+      margin: 20px 0;
+      font-weight: 700;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .cta-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
+    }
+
+    footer {
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.3);
+      border-top: 1px solid #00ffcc;
+    }
+
+    @media (max-width: 768px) {
+      h1.typing { font-size: 2rem; }
+      h2 { font-size: 1.6rem; }
+      p, li { font-size: 1rem; }
+      .container { padding: 15px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+  <div class="container">
+    <h1 class="typing">Temp Mail Bot: Ignite the Solar Grid</h1>
+
+    <div class="section">
+      <h2>What is Temp Mail?</h2>
+      <p>Temp Mail is your cosmic shield in the digital universe. Generate disposable email addresses to sign up for services, test apps, or blast away spam without revealing your true identity. Temp Mail Bot lights up Telegram with a solar-powered, hacker-fueled interface.</p>
+      <a href="https://t.me/TempMail_AssistBot" class="cta-button">Join Temp Mail Bot on Telegram</a>
+    </div>
+
+    <div class="section">
+      <h2>Bot Features</h2>
+      <ul>
+        <li><strong>/start</strong>: Launches a blazing photo, stellar caption, and inline buttons to navigate the grid.</li>
+        <li><strong>/getmail</strong>: Ignites a random temp email address in a flash.</li>
+        <li><strong>/getmail yourname</strong>: Forges a custom email with your chosen alias.</li>
+        <li><strong>/inbox encoded_mail</strong>: Scans the latest email in your temp starfield.</li>
+        <li><strong>/allinbox encoded_mail</strong>: Unleashes all emails in your temp vault.</li>
+        <li><strong>/delete encoded_mail msgid</strong>: Vaporizes a specific email by ID.</li>
+        <li><strong>Admin Commands</strong>:
+          <ul>
+            <li><strong>/stats</strong>: Decodes galactic bot stats—users, emails, and more.</li>
+            <li><strong>/userinfo user_id</strong>: Pulls classified data on any user.</li>
+            <li><strong>/broadcast</strong>: Fires messages to all users (2/week max).</li>
+            <li><strong>ziddi_broadcast</strong>: Alternate broadcast for admin starlords.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>🚀 Temp Mail Bot</h2>
+
+<p><strong>🌌 Name:</strong> Temp Mail Bot</p>
+<p><strong>🛰️ Username:</strong> <a href="https://t.me/TempMail_AssistBot">@TempMail_AssistBot</a> (Plug into the cosmic grid on Telegram!)</p>
+<p><strong>🧬 Version:</strong> 5.0.0</p>
+
+<p><strong>💾 Source:</strong> Crafted in JavaScript, powered by Cloudflare D1. The source is private — a blazing supernova behind the scenes.</p>
+<p><strong>⚡ Hosting:</strong> Running on Cloudflare Workers for interstellar speed and stability, with D1 tracking the stars (users & stats).</p>
+<p><strong>🎯 Purpose:</strong> Delivering instant temp emails through Telegram — stay stealthy, stay solar-powered.</p>
+
+<p><strong>🛡️ Why Use It?</strong> Cloak your identity, vaporize spam, and rule your inbox galaxy. Join <a href="https://t.me/TempMail_AssistBot">@TempMail_AssistBot</a> for mission updates.</p>
+
+<a href="https://t.me/TempMail_AssistBot" class="cta-button">☄️ Get Cosmic Updates</a>
+
+    </div>
+
+    <footer>
+      <p>Engineered by <a href="https://t.me/meta_server">Meta Server</a> | Support: <a href="https://t.me/meta_familys">Meta Familys</a></p>
+      <p>©🚀 2025 Temp Mail Bot: All Systems Go Supernova.
+Blazing Fast. Ultra Secure. Always Disposable.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Smooth scrolling for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
